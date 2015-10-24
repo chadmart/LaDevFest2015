@@ -2,6 +2,11 @@
 
 namespace CompleteProject
 {
+	public static class ShootTriggered
+	{
+		public static bool isShootTriggered = false;
+	}
+
     public class EnemyHealth : MonoBehaviour
     {
         public int startingHealth = 100;            // The amount of health the enemy starts the game with.
@@ -39,7 +44,9 @@ namespace CompleteProject
 			bool isLookedAt = GetComponent<Collider>().Raycast(head.Gaze, out hit, Mathf.Infinity);
 			if (isLookedAt) {
 				TakeDamage( 40, hit.transform.position);
-				Debug.Log("Looked");
+				ShootTriggered.isShootTriggered = true;
+				
+				//Debug.Log("Looked");
 			}
 
             // If the enemy should be sinking...

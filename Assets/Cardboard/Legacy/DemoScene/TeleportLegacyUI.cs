@@ -28,7 +28,9 @@ public class TeleportLegacyUI : Teleport {
     bool isLookedAt = GetComponent<Collider>().Raycast(head.Gaze, out hit, Mathf.Infinity);
 	
     SetGazedAt(isLookedAt);
-    if (Cardboard.SDK.Triggered && isLookedAt) {
+    if (Cardboard.SDK.Triggered) {
+
+			Debug.Log("clicked");
       TeleportRandomly();
     }
   }

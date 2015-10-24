@@ -52,6 +52,9 @@ public class CardboardHead : MonoBehaviour {
   /// grandparent or higher ancestor is a suitable target.
   public Transform target;
 
+	public Transform controlPlayer;
+	public Transform controlPlayerHead;
+
 
   /// Determines whether the head tracking is applied during `LateUpdate()` or
   /// `Update()`.  The default is false, which means it is applied during `LateUpdate()`
@@ -82,6 +85,10 @@ public class CardboardHead : MonoBehaviour {
     if (updateEarly) {
       UpdateHead();
     }
+		if (Cardboard.SDK.Triggered) {
+			Debug.Log("clicked");
+			controlPlayer.transform.position +=  controlPlayerHead.forward;
+		}
   }
 
   // Normally, update head pose now.

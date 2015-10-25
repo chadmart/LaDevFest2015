@@ -41,7 +41,7 @@ namespace CompleteProject
             // Add the time since Update was last called to the timer.
             timer += Time.deltaTime;
 
-#if !MOBILE_INPUT
+#if MOBILE_INPUT
             // If the Fire1 button is being press and it's time to fire...
 //			if(Input.GetButton ("Fire1") && timer >= timeBetweenBullets && Time.timeScale != 0)
 			if(ShootTriggered.isShootTriggered && timer >= timeBetweenBullets && Time.timeScale != 0)

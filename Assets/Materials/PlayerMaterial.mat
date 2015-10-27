@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 4
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -10,7 +10,9 @@ Material:
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _LIGHTMAPPING_DYNAMIC_LIGHTMAPS _LIGHTMAPPING_REALTIME _NORMALMAP
     _SPECGLOSSMAP _UVSEC_UV1
-  m_CustomRenderQueue: -1
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: 2000
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -37,6 +39,20 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _OcclusionMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 6ae2af98f5c9f0243806bfb6ccbbdd19, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
@@ -44,7 +60,14 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ParallaxMap
+          name: _DetailMask
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DetailAlbedoMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -65,38 +88,12 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _DetailMask
+          name: _DetailTex
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DetailAlbedoMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _OcclusionMap
-        second:
-          m_Texture: {fileID: 2800000, guid: 6ae2af98f5c9f0243806bfb6ccbbdd19, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
-      data:
-        first:
-          name: _Shininess
-        second: .115098767
-      data:
-        first:
-          name: _AlphaTestRef
-        second: .5
-      data:
-        first:
-          name: _Lightmapping
-        second: 1
       data:
         first:
           name: _SrcBlend
@@ -105,6 +102,18 @@ Material:
         first:
           name: _DstBlend
         second: 0
+      data:
+        first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
+          name: _Shininess
+        second: .115098767
+      data:
+        first:
+          name: _AlphaTestRef
+        second: .5
       data:
         first:
           name: _Parallax
@@ -139,8 +148,40 @@ Material:
         second: 0
       data:
         first:
+          name: _Lightmapping
+        second: 1
+      data:
+        first:
           name: _EmissionScaleUI
         second: 1
+      data:
+        first:
+          name: _Stencil
+        second: 0
+      data:
+        first:
+          name: _StencilComp
+        second: 8
+      data:
+        first:
+          name: _StencilOp
+        second: 0
+      data:
+        first:
+          name: _StencilReadMask
+        second: 255
+      data:
+        first:
+          name: _StencilWriteMask
+        second: 255
+      data:
+        first:
+          name: _ColorMask
+        second: 15
+      data:
+        first:
+          name: _Strength
+        second: .200000003
     m_Colors:
       data:
         first:
@@ -156,13 +197,13 @@ Material:
         second: {r: .25, g: .213235289, b: .213235289, a: 1}
       data:
         first:
-          name: _SpecularColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
-      data:
-        first:
           name: _EmissionColorUI
         second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _EmissionColorWithMapUI
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecularColor
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
